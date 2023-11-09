@@ -1095,6 +1095,8 @@ def install_poetry_dependencies(query, path):
             poetry_toml_target_file = copy_file_to_target(poetry_toml_file, temp_dir)
         else:
             poetry_toml_target_file = None
+        
+        log.info(f'Files are available in temporal directory {temp_dir}: {os.listdir(temp_dir)}')
 
         poetry_exec = "poetry"
         python_exec = runtime
